@@ -2,7 +2,7 @@ class GalleryInput < SimpleForm::Inputs::FileInput
 
   include Assetable::Uploaders
 
-  def input
+  def input(wrapper_options)
     # TODO:: Find a better way to do this
     fieldname = "#{object_name}[#{attribute_name}_attributes][asset_attachments_attributes]"
 

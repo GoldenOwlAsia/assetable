@@ -2,7 +2,7 @@ class UploaderInput < SimpleForm::Inputs::FileInput
 
   include Assetable::Uploaders
 
-  def input
+  def input(wrapper_options)
 
     # Create the hidden input as fields_for
     fieldname = "#{object_name}[#{attribute_name}_association_attributes][asset_id]"
@@ -10,7 +10,7 @@ class UploaderInput < SimpleForm::Inputs::FileInput
     # For has_one uploaders, we'll add a nil valued hidden field so that we can
     # remove an image (similar to how checkboxes work)
     hidden_field = template.hidden_field_tag(fieldname, nil, class: "assetable-uploader-input")
-    
+
     # Asset preview
     preview = asset_preview(object.send("#{attribute_name}"), :asset, fieldname)
 
