@@ -53,7 +53,7 @@ class Assetable::AssetsController < ActionController::Base
 
   # Permitted params for the model
   def permitted_params
-    params.require(params[:asset_type].underscore.to_sym).permit(
+    params.require(params[:asset_type].underscore.gsub('/', '_').to_sym).permit(
       :name,
       :filename,
       :body,
