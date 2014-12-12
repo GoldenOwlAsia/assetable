@@ -12,7 +12,7 @@ module Assetabler
     end
 
     def has_icon?
-      available_icons = Assetable.external_document_icons.collect{|k, v| k}
+      available_icons = Assetable.external_document_icons.to_a.collect{|k, v| k}
       available_icons.include? self.content_type.to_sym if self.content_type.present?
     end
 

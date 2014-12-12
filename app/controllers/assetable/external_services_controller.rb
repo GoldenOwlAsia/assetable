@@ -29,7 +29,7 @@ class Assetable::ExternalServicesController < ActionController::Base
 
   # Permitted params for the model
   def permitted_params
-    params.require(:external_service).permit(
+    params.require(:assetabler_external_service).permit(
       :name,
       :filename,
       :body,

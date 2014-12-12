@@ -1,12 +1,12 @@
 .assetable-external-services.assetable-modal.modal.fade
   .modal-dialog
     .modal-content
-      = form_for [:assetable, external_service], remote: true do |f|
+      = form_for [:assetable, external_service], url: assetable_external_services_path, remote: true do |f|
         .modal-header
           %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
           %h4.modal-title Third Party Service
         .modal-body
-          
+
           = hidden_field_tag :fieldname, fieldname
           = hidden_field_tag :uploader_id, uploader_id
 
@@ -15,7 +15,7 @@
             = f.text_field :name, class: "form-control input-fluid", required: true
           .form-group
             = f.label :content_type
-            = f.select :content_type, ExternalService.possible_content_types
+            = f.select :content_type, Assetabler::ExternalService.possible_content_types
           .form-group
             = f.label :filename
             = f.text_field :filename, class: "form-control input-fluid"
