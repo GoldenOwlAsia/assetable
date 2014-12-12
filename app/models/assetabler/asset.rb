@@ -1,9 +1,9 @@
 module Assetabler
   class Asset < ActiveRecord::Base
 
-    has_many :asset_attachments, :as => :assetable, :dependent => :destroy
+    has_many :asset_attachments, :as => :assetable, :dependent => :destroy, :class_name => "Assetabler::AssetAttachment"
     has_many :assetable, :through => :asset_attachments
-    
+
     before_save :update_asset_attributes
 
 
