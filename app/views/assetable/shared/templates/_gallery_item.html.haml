@@ -13,18 +13,18 @@
             = image_tag "assetable/icons/#{asset.icon}", class: "uploader-preview"
           - else
             = image_tag "assetable/icons/icon-document.png", class: "uploader-preview"
-      
+
       %span.uploader-name= asset.name
       .uploader-size-and-actions
         %span.uploader-size= number_to_human_size(asset.file_size)
 
         .uploader-actions
           = link_to "delete", "#", class: "btn-uploader btn-uploader-remove-asset"
-          = link_to "edit", Rails.application.routes.url_helpers.edit_assetable_asset_path(asset.id), class: "btn-uploader btn-uploader-edit-asset", remote: true      
-  
+          = link_to "edit", Rails.application.routes.url_helpers.edit_assetable_asset_path(asset.id), class: "btn-uploader btn-uploader-edit-asset", remote: true
+
     - if local_assigns.has_key? :fieldname
 
-      - assetable_index = local_assigns.has_key?(:index) ? index : Time.now.to_i 
+      - assetable_index = local_assigns.has_key?(:index) ? index : Time.now.to_i + rand(1..10000)
       - if local_assigns.has_key? :asset_attachment
         - asset_attachment_id = asset_attachment.id
         - asset_attachment_sort_order = asset_attachment.sort_order
