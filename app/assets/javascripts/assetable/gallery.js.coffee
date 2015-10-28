@@ -31,7 +31,8 @@ bind_galleries = ->
               $(this).val(index)
 
 
-window.Assetable.bind_galleries = bind_galleries
+if !window.Assetable.bind_galleries
+  window.Assetable.bind_galleries = bind_galleries
 
 
 $(document).ready ->

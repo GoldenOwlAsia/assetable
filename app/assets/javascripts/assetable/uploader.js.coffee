@@ -18,10 +18,11 @@ bind_uploaders = ->
           $('.uploader-preview', item).html('')
 
 
-window.Assetable.bind_uploaders = bind_uploaders
+if (!window.Assetable.bind_uploaders)
+  window.Assetable.bind_uploaders = bind_uploaders
 
 $(document).ready ->
-            
+
   window.Assetable.bind_uploaders()
 
   # Remove assetable modals on close

@@ -1,5 +1,3 @@
-#= require_self
-
 #= require moxie
 #= require plupload.dev
 #= require plupload.settings
@@ -8,9 +6,8 @@
 #= require vendor/bootstrap-modal
 
 
+#= require assetable/init
 #= require assetable/assetable_uploader
 #= require assetable/uploader
 #= require assetable/gallery
 #= require assetable/asset_gallery
-
-window.Assetable = {}
