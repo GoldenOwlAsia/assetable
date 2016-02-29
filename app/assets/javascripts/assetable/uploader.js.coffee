@@ -10,7 +10,7 @@ bind_uploaders = ->
         multi_selection: false
         url: "/assetable/assets.js"
         directions: $this.attr('data-uploader-directions')
-        # max_file_size: $this.attr("data-max-file-size")
+        max_file_size: $this.attr("data-max-file-size")
         authenticity_token: $("meta[name=\"csrf-token\"]").attr("content")
         fileRemoved: (item, button) ->
           # Remove the asset preview and input when removed. No need

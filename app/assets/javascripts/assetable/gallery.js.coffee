@@ -12,11 +12,16 @@ bind_galleries = ->
         multi_selection: true
         gallery: true
         url: "/assetable/assets.js"
+        max_file_size: $this.parents('.gallery').attr("data-max-file-size")
         authenticity_token: $("meta[name=\"csrf-token\"]").attr("content")
         fileRemoved: (item, button) ->
           $(button).parentsUntil('.uploader-preview').parent().find('.assetable-gallery-item-remove').val('1')
           $(button).parentsUntil('.uploader-preview').parent().fadeOut()
-
+        error: (up, err) ->
+          event = jQuery.Event('error.gallery-uploader')
+          $this.trigger(event, [up, err])
+          if !event.isPropagationStopped()
+            alert(err.message)
 
         # Make the gallery sortable
         $(this).sortable

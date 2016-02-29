@@ -120,6 +120,7 @@
 
       # # Listen for errors
       uploader.bind "Error", (up, err) ->
+        assetable_uploader.options.error(up, err)
 
 
 
