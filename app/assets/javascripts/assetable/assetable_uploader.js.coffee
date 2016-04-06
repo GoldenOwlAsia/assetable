@@ -74,6 +74,7 @@
           fieldname: assetable_uploader.options.fieldname
           gallery: assetable_uploader.options.gallery
           uploader_id: assetable_uploader.options.uploader_id
+        resize: assetable_uploader.options.resize
 
         # Filter file types
         filters:

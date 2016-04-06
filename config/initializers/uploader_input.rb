@@ -25,12 +25,12 @@ class ActionView::Helpers::FormBuilder
     else
       asset_preview = content_tag(:div, "", class: "uploader-preview")
     end
-    
+
     # uploaer html with preview and input
     uploader_html = content_tag(:div, (asset_preview), class: "uploader-assets-wrapper")
 
     # Create and return the uploader html
-    uploader_wrapper = content_tag(:div, uploader_html, class: "uploader #{'uploader-has-asset' if asset} #{options[:class]}", id: options[:id], :'data-uploader-input-name' => fieldname, :'data-uploader-directions' => get_directions(options), :'data-max-file-size' => get_max_file_size(options))
+    uploader_wrapper = content_tag(:div, uploader_html, class: "uploader #{'uploader-has-asset' if asset} #{options[:class]}", id: options[:id], :'data-uploader-input-name' => fieldname, :'data-uploader-directions' => get_directions(options), :'data-max-file-size' => get_max_file_size(options), :'data-resize' => get_resize(options))
     return uploader_wrapper
   end
 
@@ -85,6 +85,10 @@ class ActionView::Helpers::FormBuilder
 
   def get_max_file_size options
     (options[:max_file_size] || Assetable.max_file_size || "10MB").to_s
+  end
+
+  def get_resize options
+    JSON::encode(options[:resize] || Assetable.resize)
   end
 
   def get_directions options

@@ -15,7 +15,7 @@ class ActionView::Helpers::FormBuilder
     options[:id] = field_id(method, options[:index])
     # The fieldname for the association
     fieldname = @object_name + "[#{method}_attributes][asset_ids][]"
-    
+
     # Add the asset preview or the empty preview div
     if gallery = @object.send(method)
       asset_preview = ""
@@ -30,7 +30,8 @@ class ActionView::Helpers::FormBuilder
     uploader_html = content_tag(:div, (asset_preview.html_safe), class: "uploader-data-wrapper")
 
     # Wrap the previews and uploader in a div
-    uploader_wrapper = content_tag(:div, uploader_html, class: "gallery-uploader", id: options[:id], :'data-uploader-input-name' => fieldname, :'data-uploader-directions' => get_directions(options), :'data-max-file-size' => get_max_file_size(options))
+    uploader_wrapper = content_tag(:div, uploader_html, class: "gallery-uploader", id: options[:id], :'data-uploader-input-name' => fieldname, :'data-uploader-directions' => get_directions(options), :'data-max-file-size' => get_max_file_size(options), :'data-resize' => get_resize(options))
+
     return uploader_wrapper
   end
 

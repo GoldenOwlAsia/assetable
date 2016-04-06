@@ -14,6 +14,7 @@ bind_galleries = ->
         url: "/assetable/assets.js"
         max_file_size: $this.parents('.gallery').attr("data-max-file-size")
         authenticity_token: $("meta[name=\"csrf-token\"]").attr("content")
+        resize: $this.parents('.gallery').data('resize')
         fileRemoved: (item, button) ->
           $(button).parentsUntil('.uploader-preview').parent().find('.assetable-gallery-item-remove').val('1')
           $(button).parentsUntil('.uploader-preview').parent().fadeOut()
