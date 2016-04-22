@@ -2,12 +2,12 @@
 
 class ImageUploader < AssetUploader
 
-  include CarrierWave::MimeTypes
+  # include CarrierWave::MimeTypes
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
 
   # More reliable content types
-  process :set_content_type
+  # process :set_content_type
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
