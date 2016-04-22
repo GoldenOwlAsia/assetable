@@ -1,5 +1,5 @@
 module Assetabler
-  class AssetAttachment < ActiveRecord::Base
+  class AssetAttachment < Assetabler::Base
 
     belongs_to :asset, :class_name => "Assetabler::Asset"
     belongs_to :assetable, polymorphic: true

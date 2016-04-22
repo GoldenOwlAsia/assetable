@@ -1,5 +1,5 @@
 module Assetabler
-  class Asset < ActiveRecord::Base
+  class Asset < Assetabler
 
     has_many :asset_attachments, :dependent => :destroy, :class_name => "Assetabler::AssetAttachment"
     has_many :assetable, :through => :asset_attachments
