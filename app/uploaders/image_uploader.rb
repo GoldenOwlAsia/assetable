@@ -4,7 +4,8 @@ class ImageUploader < AssetUploader
 
   # include CarrierWave::MimeTypes
   # Include RMagick or MiniMagick support:
-  include CarrierWave::RMagick
+  # include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
 
   # More reliable content types
   # process :set_content_type

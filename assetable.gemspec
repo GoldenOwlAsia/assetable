@@ -30,7 +30,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'carrierwave'
   s.add_dependency 'fog'
   s.add_dependency 'kaminari'
-  s.add_dependency 'rmagick', '~> 2.13.2'
+  # s.add_dependency 'rmagick', '~> 2.13.2'
+  s.add_dependency 'mini_magick'
   s.add_dependency 'plupload-rails'
   s.add_dependency 'simple_form'
 
