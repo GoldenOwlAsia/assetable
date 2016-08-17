@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "sqlite3"
 
   s.add_dependency 'carrierwave'
-  s.add_dependency 'fog'
+  # s.add_dependency 'fog'
   s.add_dependency 'kaminari'
   # s.add_dependency 'rmagick', '~> 2.13.2'
   s.add_dependency 'mini_magick'
