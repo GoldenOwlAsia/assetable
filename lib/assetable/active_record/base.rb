@@ -13,7 +13,7 @@ module Assetable
             has_one arg, through: :"#{arg}_association", :source => :asset
             accepts_nested_attributes_for :"#{arg}_association", allow_destroy: true
             define_method arg do
-              self.send("#{arg}_association").try(:asset) || super
+              self.send("#{arg}_association").try(:asset) || super()
             end
           end
         end
