@@ -1,4 +1,4 @@
-class AddSortOrderToAssetAttachments < ActiveRecord::Migration
+class AddSortOrderToAssetAttachments < ActiveRecord::Migration[5.1]
   def change
     add_column :assetable_asset_attachments, :sort_order, :integer, default: 0
 

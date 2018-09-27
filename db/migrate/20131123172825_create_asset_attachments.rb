@@ -1,4 +1,4 @@
-class CreateAssetAttachments < ActiveRecord::Migration
+class CreateAssetAttachments < ActiveRecord::Migration[5.1]
   def change
     create_table :assetable_asset_attachments do |t|
       t.references :asset
