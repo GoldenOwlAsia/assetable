@@ -1,8 +1,8 @@
 class CreateAssetAttachments < ActiveRecord::Migration[5.1]
   def change
     create_table :assetable_asset_attachments do |t|
-      t.references :asset
-      t.references :assetable, :polymorphic => true
+      t.references :asset, index: false
+      t.references :assetable, :polymorphic => true, index: false
       t.string :name
       t.timestamps
     end
