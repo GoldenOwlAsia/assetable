@@ -2,7 +2,7 @@ module Assetabler
   class AssetAttachment < Assetabler::Base
 
     belongs_to :asset, :class_name => "Assetabler::Asset"
-    belongs_to :assetable, polymorphic: true
+    belongs_to :assetable, polymorphic: true, optional: true
 
     before_validation :ensure_name_is_not_blank
     before_save :set_sort_order

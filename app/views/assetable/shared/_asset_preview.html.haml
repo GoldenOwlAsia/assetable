@@ -1,7 +1,7 @@
 .uploader-asset-details
   = link_to asset.filename.to_s, target: "_blank" do
     - if asset.image?
-      = image_tag asset.filename.preview.to_s, class: "uploader-preview"
+      = image_tag asset.filename.to_s, class: "uploader-preview"
     - elsif asset.document?
       = image_tag "assetable/icons/icon-#{asset.extension}.png", class: "uploader-preview"
     - elsif asset.video?
