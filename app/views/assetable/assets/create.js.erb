@@ -5,3 +5,5 @@ if (uploader.hasClass("gallery-uploader")) {
 } else {
   $('#<%= @uploader_id %>').find('.uploader-assets-wrapper').html('<%= j render partial: "assetable/shared/templates/asset_item", locals: { asset: @asset, fieldname: @fieldname } %>');
 };
+
+uploader.trigger('change');
