@@ -1,4 +1,4 @@
-class CreateGalleries < ActiveRecord::Migration[5.1]
+class CreateGalleries < ActiveRecord::Migration
   def change
     create_table :assetable_galleries do |t|
       t.references :galleryable, :polymorphic => true
